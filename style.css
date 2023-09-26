@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+body h1 {
+  margin-bottom: 20px;
+}
+body .boardAndStateContainer {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+body .board {
+  display: inline-block;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+body .board.disabled {
+  filter: blur(3px);
+}
+body .board .row {
+  clear: both;
+}
+body .board .row .square {
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 60px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+body .board .row .square:hover {
+  background-color: #eee;
+}
+body .board .row .x {
+  color: red;
+}
+body .board .row .o {
+  color: blue;
+}
+body .reset {
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #bbbbbb;
+  border-radius: 25px;
+}
+body .reset:hover {
+  background-color: #aaaaaa;
+  cursor: pointer;
+}
+body .reset:active {
+  background-color: #ffffff;
+}
+body .gameStateDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+}
+body .gameStateDiv.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,62 @@
+<!-- FILEPATH: index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>TIC TAC TOE</title>
+    </head>
+    <body>
+        <h1>TIC TAC TOE</h1>
+        
+        <div class="boardAndStateContainer">
+            <div class="board">
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+                <div class="row">
+                    <div class="square"></div>
+                    <div class="square"></div>
+                    <div class="square"></div>
+                </div>
+            </div>
+            
+            <div class="gameStateDiv hidden">
+                <h2 class="gameState">INIT</h2>
+            </div>
+
+        </div>
+        
+
+        <button class="reset" onclick="reset()">Reset</button>
+
+    </body>
+
+    <script src="./script.js"></script>
+    <script>
+        var gameStateDiv= document.querySelector(".gameStateDiv.hidden");
+
+        var observer = new MutationObserver(function(mutationsList, observer) {
+            for(var mutation of mutationsList) {
+                if (mutation.type == 'attributes') {
+                    if(gameStateDiv.classList.contains("hidden"))
+                        document.querySelector(".board").classList.remove("disabled")
+                    else
+                        document.querySelector(".board").classList.add("disabled")
+                }
+            }
+        });
+
+        observer.observe(gameStateDiv, {attributes: true, attributeFilter: ['class']});
+
+    </script>
+
+</html>
