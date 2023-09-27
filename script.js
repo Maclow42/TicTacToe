@@ -15,9 +15,9 @@ function play(index){
         return;
     if(squares[index].classList.contains('x') || squares[index].classList.contains('o'))
         return;
-    squares[index].innerHTML = toPlay == 0 ? 'x' : 'o';
-    squares[index].classList.add(toPlay == 0 ? 'x' : 'o');
-    squares[index].classList.add('animate--pop');
+    squares[index].innerHTML = toPlay == 0 ? '<p>x</p>' : '<p>o</p>';
+    squares[index].querySelector('p').classList.add(toPlay == 0 ? 'x' : 'o');
+    squares[index].querySelector('p').classList.add('animate--pop');
     toPlay = toPlay == 0 ? 1 : 0;
     
     checkGameState();
@@ -38,8 +38,10 @@ function checkGameState(){
     gameState++;
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
-        if (squares[a].innerHTML && squares[a].innerHTML == squares[b].innerHTML && squares[a].innerHTML == squares[c].innerHTML) {
-            gameState = (squares[a].innerHTML === 'x' ? -1 : -2);
+        if (squares[a].querySelector('p').innerHTML &&
+            squares[a].innerHTML == squares[b].innerHTML &&
+            squares[a].innerHTML == squares[c].innerHTML) {
+            gameState = (squares[a].querySelector('p').innerHTML === 'x' ? -1 : -2);
             break;
         }
     }
@@ -69,9 +71,6 @@ function checkGameState(){
 function reset(){
     for(let i = 0; i < squares.length; i++){
         squares[i].innerHTML = '';
-        squares[i].classList.remove('x');
-        squares[i].classList.remove('o');
-        squares[i].classList.remove('animate--pop');
     }
     document.getElementsByClassName('gameState')[0].innerHTML = '';
     document.getElementsByClassName('gameStateDiv')[0].classList.add('hidden')
