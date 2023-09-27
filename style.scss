@@ -1,7 +1,36 @@
+$light_red : red;
+$light_blue : rgb(76, 134, 243);
+
+@keyframes pop {
+    0%{
+        scale: 0.7;
+    }
+
+    80%{
+        scale: 1.2;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
+.animate--pop{
+    animation-duration: .2s;
+    animation-name: pop;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h1{
+    font: 900 40px Arial, sans-serif;
+    color: darkblue;
+    -webkit-text-stroke: 1px white;
+    margin-bottom: 20px;
 }
 
 body {
@@ -10,14 +39,13 @@ body {
     justify-content: center;
     align-items: center;
     gap : 20px;
+
+    background-color: $light_blue;
     
     font-family: Arial, sans-serif;
+    color: white;
     width: 100vw;
     height: 100vh;
-
-    h1{
-        margin-bottom: 20px;
-    }
 
     .boardAndStateContainer{
         position: relative;
@@ -42,14 +70,30 @@ body {
                 float: left;
                 width: 100px;
                 height: 100px;
-                border: 1px solid black;
+                border: 3px solid white;
                 font-size: 60px;
                 text-align: center;
                 line-height: 100px;
                 cursor: pointer;
 
+                &#topleft{
+                    border-top-left-radius: 4px;
+                }
+
+                &#topright{
+                    border-top-right-radius: 4px;
+                }
+
+                &#bottomleft{
+                    border-bottom-left-radius: 4px;
+                }
+
+                &#bottomright{
+                    border-bottom-right-radius: 4px;
+                }
+
                 &:hover {
-                    background-color: #eee;
+                    background-color: #ffffff55;
                 }
             }
 
@@ -63,7 +107,7 @@ body {
         }
     }
 
-    .reset{
+    button{
         font-size: 15px;
 
         padding-top : 5px;
@@ -71,11 +115,13 @@ body {
         padding-left : 25px;
         padding-right : 25px;
 
+        width: fit-content;
+
         background-color: #bbbbbb;
         border-radius: 25px;
         
         &:hover {
-            background-color: #aaaaaa;
+            background-color: #ffffff55;
             cursor: pointer;
         }
 
@@ -96,7 +142,7 @@ body {
 
         height: 100%;
         width: 100%;
-
+        
         &.hidden{
             display: none;
         }

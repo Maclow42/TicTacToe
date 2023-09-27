@@ -14,9 +14,9 @@
         <div class="boardAndStateContainer">
             <div class="board">
                 <div class="row">
+                    <div class="square" id="topleft"></div>
                     <div class="square"></div>
-                    <div class="square"></div>
-                    <div class="square"></div>
+                    <div class="square" id="topright"></div>
                 </div>
                 <div class="row">
                     <div class="square"></div>
@@ -24,9 +24,9 @@
                     <div class="square"></div>
                 </div>
                 <div class="row">
+                    <div class="square" id="bottomleft"></div>
                     <div class="square"></div>
-                    <div class="square"></div>
-                    <div class="square"></div>
+                    <div class="square" id="bottomright"></div>
                 </div>
             </div>
             
@@ -36,8 +36,10 @@
 
         </div>
         
-
-        <button class="reset" onclick="reset()">Reset</button>
+        <span class="buttonDiv">
+            <button class="reset" onclick="reset()">Reset</button>
+            <!-- <button class="goMenu" onclick="">Return to menu</button> -->
+        </span>
 
     </body>
 

@@ -17,6 +17,7 @@ function play(index){
         return;
     squares[index].innerHTML = toPlay == 0 ? 'x' : 'o';
     squares[index].classList.add(toPlay == 0 ? 'x' : 'o');
+    squares[index].classList.add('animate--pop');
     toPlay = toPlay == 0 ? 1 : 0;
     
     checkGameState();
@@ -43,20 +44,23 @@ function checkGameState(){
         }
     }
 
+    var winnerText = '';
 
     switch(gameState){
         case -1:
-            document.getElementsByClassName('gameState')[0].innerHTML = 'X wins!';
-            document.getElementsByClassName('gameStateDiv')[0].classList.remove('hidden');
+            winnerText = 'X wins!';
             break;
         case -2:
-            document.getElementsByClassName('gameState')[0].innerHTML = 'O wins!';
-            document.getElementsByClassName('gameStateDiv')[0].classList.remove('hidden');
+            winnerText = 'O wins!';
             break;
         case 9:
-            document.getElementsByClassName('gameState')[0].innerHTML = 'Draw!';
-            document.getElementsByClassName('gameStateDiv')[0].classList.remove('hidden');
+            winnerText = 'Draw!';
             break;
+    }
+
+    if(winnerText != ''){
+        document.getElementsByClassName('gameState')[0].innerHTML = winnerText;
+        document.getElementsByClassName('gameStateDiv')[0].classList.remove('hidden');
     }
 
     return gameState;
@@ -67,6 +71,7 @@ function reset(){
         squares[i].innerHTML = '';
         squares[i].classList.remove('x');
         squares[i].classList.remove('o');
+        squares[i].classList.remove('animate--pop');
     }
     document.getElementsByClassName('gameState')[0].innerHTML = '';
     document.getElementsByClassName('gameStateDiv')[0].classList.add('hidden')
