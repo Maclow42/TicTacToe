@@ -38,7 +38,7 @@ function checkGameState(){
     gameState++;
     for (let i = 0; i < lines.length; i++) {
         const [a, b, c] = lines[i];
-        if (squares[a].querySelector('p').innerHTML &&
+        if (squares[a].innerHTML &&
             squares[a].innerHTML == squares[b].innerHTML &&
             squares[a].innerHTML == squares[c].innerHTML) {
             gameState = (squares[a].querySelector('p').innerHTML === 'x' ? -1 : -2);
