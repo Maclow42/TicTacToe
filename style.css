@@ -33,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: rgb(76, 134, 243);
+  background: radial-gradient(circle, rgb(37, 95, 204) 0%, rgb(76, 134, 243) 40%, rgb(124, 163, 235) 100%);
   font-family: Arial, sans-serif;
   color: white;
   width: 100vw;
@@ -88,21 +88,25 @@ body .board .row .o {
   color: blue;
 }
 body button {
-  font-size: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
   width: fit-content;
-  background-color: #bbbbbb;
+  background-color: rgb(76, 134, 243);
+  color: white;
+  border: 2px solid white;
   border-radius: 25px;
+  box-shadow: 3px 3px 3px darkblue;
 }
 body button:hover {
   background-color: rgba(255, 255, 255, 0.3333333333);
   cursor: pointer;
 }
 body button:active {
-  background-color: #ffffff;
+  box-shadow: none;
+  background-color: rgb(37, 95, 204);
 }
 body .gameStateDiv {
   display: flex;
