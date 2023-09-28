@@ -32,7 +32,7 @@ $very_light_blue : rgb(124, 163, 235);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .x {
@@ -51,9 +51,9 @@ h1{
 }
 
 body {
-    @include centeredFlexContainer;
     background: radial-gradient(circle, $blue 0%, $light_blue 40%, $very_light_blue 100%);
     width: 100vw;
+    min-width: 330px;
     height: 100vh;
 }
 
@@ -63,8 +63,12 @@ body {
     flex-direction: column;
     gap : 20px;
 
-    width: fit-content;
-    height: fit-content;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
 
     .boardAndStateContainer{
         position: relative;
