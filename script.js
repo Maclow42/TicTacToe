@@ -199,8 +199,6 @@ function askIAPlay(){
     // alpha beta algorithm here
     var tree = new Tree(gameState, null, null);
 
-    console.log(gameState);
-
     minmax(getBoard(), tree, toPlay == 0 ? true : false);
 
     var bestMoves = [];
