@@ -73,8 +73,12 @@ function play(index){
         document.getElementsByClassName('gameStateDiv')[0].classList.remove('hidden');
     }
 
-    if(toPlay == 1)
-        play(askIAPlay());
+    if(toPlay == 1){
+        // wait .5s before IA play
+        setTimeout(function() {
+            play(askIAPlay());
+        }, 500);
+    }
 }
 
 function checkGameState(board){
