@@ -1,45 +1,48 @@
 <!-- FILEPATH: index.html -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" sizes="100x100" href="logo.png">
         <title>TIC TAC TOE</title>
     </head>
     <body>
-        <h1>TIC TAC TOE</h1>
-        
-        <div class="boardAndStateContainer">
-            <div class="board">
-                <div class="row">
-                    <div class="square" id="topleft"></div>
-                    <div class="square"></div>
-                    <div class="square" id="topright"></div>
+        <div id="maindiv">
+            <h1>TIC TAC TOE</h1>
+            
+            <div class="boardAndStateContainer">
+                <div class="board">
+                    <div class="column">
+                        <div class="square" id="topleft"></div>
+                        <div class="square"></div>
+                        <div class="square" id="bottomleft"></div>
+                    </div>
+                    <div class="column">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <div class="column">
+                        <div class="square" id="topright"></div>
+                        <div class="square"></div>
+                        <div class="square" id="bottomright"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="square"></div>
-                    <div class="square"></div>
-                    <div class="square"></div>
+                
+                <div class="gameStateDiv hidden">
+                    <h2 class="gameState">INIT</h2>
                 </div>
-                <div class="row">
-                    <div class="square" id="bottomleft"></div>
-                    <div class="square"></div>
-                    <div class="square" id="bottomright"></div>
-                </div>
+
             </div>
             
-            <div class="gameStateDiv hidden">
-                <h2 class="gameState">INIT</h2>
-            </div>
-
+            <span class="buttonDiv">
+                <button class="reset" onclick="reset()">Reset</button>
+                <!-- <button class="goMenu" onclick="">Return to menu</button> -->
+            </span>
         </div>
-        
-        <span class="buttonDiv">
-            <button class="reset" onclick="reset()">Reset</button>
-            <!-- <button class="goMenu" onclick="">Return to menu</button> -->
-        </span>
 
     </body>
 

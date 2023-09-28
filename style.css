@@ -18,6 +18,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font: Arial, sans-serif;
+}
+
+.x {
+  color: red;
+}
+
+.o {
+  color: blue;
 }
 
 h1 {
@@ -29,65 +38,63 @@ h1 {
 
 body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   background: radial-gradient(circle, rgb(37, 95, 204) 0%, rgb(76, 134, 243) 40%, rgb(124, 163, 235) 100%);
-  font-family: Arial, sans-serif;
-  color: white;
   width: 100vw;
   height: 100vh;
 }
-body .boardAndStateContainer {
-  position: relative;
+
+#maindiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
   width: fit-content;
   height: fit-content;
 }
-body .board {
-  display: inline-block;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
+#maindiv .boardAndStateContainer {
+  position: relative;
 }
-body .board.disabled {
+#maindiv .board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+#maindiv .board.disabled {
   filter: blur(3px);
 }
-body .board .row {
-  clear: both;
-}
-body .board .row .square {
-  float: left;
+#maindiv .board .square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   width: 100px;
   height: 100px;
   border: 3px solid white;
   font-size: 60px;
   text-align: center;
-  line-height: 100px;
   cursor: pointer;
 }
-body .board .row .square#topleft {
+#maindiv .board .square#topleft {
   border-top-left-radius: 4px;
 }
-body .board .row .square#topright {
+#maindiv .board .square#topright {
   border-top-right-radius: 4px;
 }
-body .board .row .square#bottomleft {
+#maindiv .board .square#bottomleft {
   border-bottom-left-radius: 4px;
 }
-body .board .row .square#bottomright {
+#maindiv .board .square#bottomright {
   border-bottom-right-radius: 4px;
 }
-body .board .row .square:hover {
+#maindiv .board .square:hover {
   background-color: rgba(255, 255, 255, 0.3333333333);
 }
-body .board .row .x {
-  color: red;
-}
-body .board .row .o {
-  color: blue;
-}
-body button {
+#maindiv button {
   font-size: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -100,26 +107,25 @@ body button {
   border-radius: 25px;
   box-shadow: 3px 3px 3px darkblue;
 }
-body button:hover {
+#maindiv button:hover {
   background-color: rgba(255, 255, 255, 0.3333333333);
   cursor: pointer;
 }
-body button:active {
+#maindiv button:active {
   box-shadow: none;
   background-color: rgb(37, 95, 204);
 }
-body .gameStateDiv {
+#maindiv .gameStateDiv {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 2;
   height: 100%;
   width: 100%;
 }
-body .gameStateDiv.hidden {
+#maindiv .gameStateDiv.hidden {
   display: none;
 }
 
